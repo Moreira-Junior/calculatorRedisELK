@@ -1,0 +1,17 @@
+---
+- name: updating the os
+  apt:
+      update_cache: yes
+      force_apt_get: yes
+- name: upgrading the os
+  apt: 
+    upgrade: dist
+    force_apt_get: yes
+- name: installing wget
+  apt:
+    name: wget  
+- name: installing java
+  apt:
+    name: openjdk-8-jdk
+    install_recommends: no
+    update_cache: yes

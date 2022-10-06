@@ -1,0 +1,17 @@
+[Unit]
+Description=Go Calculator
+After=cloud-final.service
+
+[Service]
+WorkingDirectory=/home/ubuntu/calculator
+ExecStart=/home/ubuntu/calculator/calculator
+Restart=always
+RestartSec=10
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=calculator-go
+User=ubuntu
+
+[Install]
+WantedBy=multi-user.target
+WantedBy=cloud-init.target
