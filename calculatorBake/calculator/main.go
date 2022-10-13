@@ -15,8 +15,17 @@ import (
 var (
 	history []string
 	ctx     = context.Background()
-	redisIp = os.Getenv("REDISIP")
+	redisIp = getIpFile()
 )
+
+func getIpFile() string {
+	var file, err = os.ReadFile("/tmp/redispublicip.txt")
+	if err != nil {
+		panic(err)
+	}
+	ip := string(file[:len(file)-1])
+	return ip
+}
 
 func getNum(a string, b string) (float64, float64, error) {
 	num1, err := strconv.ParseFloat(a, 64)

@@ -38,7 +38,8 @@ resource "aws_instance" "moreira-redis" {
     subnet_id = data.aws_subnet.subnet_default.id
     security_groups = [data.aws_security_group.default_group.id]
     key_name = "kp-devops-moreirajunior"
-    
+    private_ip = "172.31.60.88"
+
     tags              = {
     Name             = "moreira-redis"
     Owner            = "moreirajunior"
