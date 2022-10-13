@@ -39,6 +39,7 @@ resource "aws_instance" "moreira-redis" {
     security_groups = [data.aws_security_group.default_group.id]
     key_name = "kp-devops-moreirajunior"
     private_ip = "172.31.60.88"
+    private_dns = "redis"
 
     tags              = {
     Name             = "moreira-redis"
